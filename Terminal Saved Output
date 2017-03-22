@@ -1,0 +1,542 @@
+Last login: Tue Mar 21 21:05:56 on ttys002
+Amiteshs-MBP:ds1004 amitesh$ git graph
+*   62a429c (HEAD -> testing) 9th commit (4th on master , fixed merging).
+|\  
+| * f7d2ce5 (master) 7th commit (5th on master).
+| *   1d90850 6th commit (4th on master).
+| |\  
+| * | c08acc1 5th commit (3rd on master).
+* | | ebd523f 8th commit (3rd on testing).
+| |/  
+|/|   
+* | 18fe355 4th commit (2nd on testing).
+|/  
+* dba4ad5 3rd commit (1st on testing).
+* 1f92f87 2nd Commit (2nd on master).
+* a74a80a 1st commit ( 1st on master ).
+Amiteshs-MBP:ds1004 amitesh$ echo "aks629 practice">>aks629_test.log
+Amiteshs-MBP:ds1004 amitesh$ git log --graph --oneline --branches >>aks629_test.log 
+Amiteshs-MBP:ds1004 amitesh$ cd ..
+Amiteshs-MBP:Big_Data amitesh$ mkdir lab7
+Amiteshs-MBP:Big_Data amitesh$ cd lab7
+Amiteshs-MBP:lab7 amitesh$ mkdir task1
+Amiteshs-MBP:lab7 amitesh$ cd task1
+Amiteshs-MBP:task1 amitesh$ git init .
+Initialized empty Git repository in /Users/amitesh/Desktop/Big_Data/lab7/task1/.git/
+Amiteshs-MBP:task1 amitesh$ ls-alp
+-bash: ls-alp: command not found
+Amiteshs-MBP:task1 amitesh$ ls -alp
+total 0
+drwxr-xr-x   3 amitesh  staff  102 Mar 22 02:30 ./
+drwxr-xr-x   3 amitesh  staff  102 Mar 22 02:29 ../
+drwxr-xr-x  10 amitesh  staff  340 Mar 22 02:30 .git/
+Amiteshs-MBP:task1 amitesh$ ls -alp .git
+total 24
+drwxr-xr-x  10 amitesh  staff  340 Mar 22 02:30 ./
+drwxr-xr-x   3 amitesh  staff  102 Mar 22 02:30 ../
+-rw-r--r--   1 amitesh  staff   23 Mar 22 02:30 HEAD
+drwxr-xr-x   2 amitesh  staff   68 Mar 22 02:30 branches/
+-rw-r--r--   1 amitesh  staff  137 Mar 22 02:30 config
+-rw-r--r--   1 amitesh  staff   73 Mar 22 02:30 description
+drwxr-xr-x  12 amitesh  staff  408 Mar 22 02:30 hooks/
+drwxr-xr-x   3 amitesh  staff  102 Mar 22 02:30 info/
+drwxr-xr-x   4 amitesh  staff  136 Mar 22 02:30 objects/
+drwxr-xr-x   4 amitesh  staff  136 Mar 22 02:30 refs/
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+Amiteshs-MBP:task1 amitesh$ echo "This is a test.">> README
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README
+
+nothing added to commit but untracked files present (use "git add" to track)
+Amiteshs-MBP:task1 amitesh$ git add README 
+Amiteshs-MBP:task1 amitesh$ git graph
+git: 'graph' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+	branch
+	grep
+Amiteshs-MBP:task1 amitesh$ git config alias.graph 'log --decorate --oneline --branches --graph'
+Amiteshs-MBP:task1 amitesh$ git graph
+fatal: your current branch 'master' does not have any commits yet
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README
+
+Amiteshs-MBP:task1 amitesh$ git commit -m '1st commit ( 1st on master )."
+> 
+> "
+> '
+[master (root-commit) 753916d] 1st commit ( 1st on master )."
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+Amiteshs-MBP:task1 amitesh$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+Did you mean this?
+	status
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+nothing to commit, working tree clean
+Amiteshs-MBP:task1 amitesh$ git graph
+* 753916d (HEAD -> master) 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git reset HEAD README 
+Amiteshs-MBP:task1 amitesh$ git graph
+* 753916d (HEAD -> master) 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git ls-files
+README
+Amiteshs-MBP:task1 amitesh$ git reset --hard HEAD~1
+fatal: ambiguous argument 'HEAD~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+Amiteshs-MBP:task1 amitesh$ git reset --hard HEAD~0
+HEAD is now at 753916d 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git graph
+* 753916d (HEAD -> master) 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+Did you mean this?
+	bisect
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+nothing to commit, working tree clean
+Amiteshs-MBP:task1 amitesh$ git reset --hard
+HEAD is now at 753916d 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git reset --hard HEAD^
+fatal: ambiguous argument 'HEAD^': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+Amiteshs-MBP:task1 amitesh$ git garph
+git: 'garph' is not a git command. See 'git --help'.
+
+Did you mean this?
+	graph
+Amiteshs-MBP:task1 amitesh$ git graph
+* 753916d (HEAD -> master) 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git reset HEAD^
+fatal: ambiguous argument 'HEAD^': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+Amiteshs-MBP:task1 amitesh$ git commit -m "1st commit ( 1st on master )."
+On branch master
+nothing to commit, working tree clean
+Amiteshs-MBP:task1 amitesh$ git graph
+* 753916d (HEAD -> master) 1st commit ( 1st on master )."
+Amiteshs-MBP:task1 amitesh$ git rebase -i
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-rebase(1) for details.
+
+    git rebase <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> master
+
+Amiteshs-MBP:task1 amitesh$ git rebase -i HEAD~1
+fatal: Needed a single revision
+invalid upstream HEAD~1
+Amiteshs-MBP:task1 amitesh$ git rebase -i HEAD^1
+fatal: Needed a single revision
+invalid upstream HEAD^1
+Amiteshs-MBP:task1 amitesh$ git commit --amend -m "1st commit ( 1st on master )."
+[master 675da29] 1st commit ( 1st on master ).
+ Date: Wed Mar 22 02:34:30 2017 -0400
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+nothing to commit, working tree clean
+Amiteshs-MBP:task1 amitesh$ git graph
+* 675da29 (HEAD -> master) 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git branch
+* master
+Amiteshs-MBP:task1 amitesh$ git branch testing
+Amiteshs-MBP:task1 amitesh$ git branch
+* master
+  testing
+Amiteshs-MBP:task1 amitesh$ git checkout testing
+Switched to branch 'testing'
+Amiteshs-MBP:task1 amitesh$ echo "This is a test on testing branch">> TEST1
+Amiteshs-MBP:task1 amitesh$ LS
+README	TEST1
+Amiteshs-MBP:task1 amitesh$ git log-files
+git: 'log-files' is not a git command. See 'git --help'.
+
+Did you mean this?
+	ls-files
+Amiteshs-MBP:task1 amitesh$ git ls-files
+README
+Amiteshs-MBP:task1 amitesh$ git status
+On branch testing
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	TEST1
+
+nothing added to commit but untracked files present (use "git add" to track)
+Amiteshs-MBP:task1 amitesh$ git add TEST1
+Amiteshs-MBP:task1 amitesh$ git graph
+* 675da29 (HEAD -> testing, master) 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git status
+On branch testing
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   TEST1
+
+Amiteshs-MBP:task1 amitesh$ git commit -m "2nd commit (1st on testing)." 
+[testing 2c4753e] 2nd commit (1st on testing).
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TEST1
+Amiteshs-MBP:task1 amitesh$ git graph
+* 2c4753e (HEAD -> testing) 2nd commit (1st on testing).
+* 675da29 (master) 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git checkout
+Amiteshs-MBP:task1 amitesh$ ls
+README	TEST1
+Amiteshs-MBP:task1 amitesh$ git status
+On branch testing
+nothing to commit, working tree clean
+Amiteshs-MBP:task1 amitesh$ echo "Creating upper branch">> TEST2
+Amiteshs-MBP:task1 amitesh$ git status
+On branch testing
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	TEST2
+
+nothing added to commit but untracked files present (use "git add" to track)
+Amiteshs-MBP:task1 amitesh$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+Amiteshs-MBP:task1 amitesh$ git add TEST2
+Amiteshs-MBP:task1 amitesh$ git branch
+  master
+* testing
+Amiteshs-MBP:task1 amitesh$ git checkout master
+A	TEST2
+Switched to branch 'master'
+Amiteshs-MBP:task1 amitesh$ ls
+README	TEST2
+Amiteshs-MBP:task1 amitesh$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   TEST2
+
+Amiteshs-MBP:task1 amitesh$ git commit -m "3rd commit (2nd on master)."
+[master 2c87f2d] 3rd commit (2nd on master).
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TEST2
+Amiteshs-MBP:task1 amitesh$ git graph
+* 2c87f2d (HEAD -> master) 3rd commit (2nd on master).
+| * 2c4753e (testing) 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git merge -m "4th commit (3rd on master)-3Level,2Node"
+fatal: No remote for the current branch.
+Amiteshs-MBP:task1 amitesh$ git merge testing -m "4th commit (3rd on master)-3Level,2Node"
+Merge made by the 'recursive' strategy.
+ TEST1 | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TEST1
+Amiteshs-MBP:task1 amitesh$ graph
+-bash: graph: command not found
+Amiteshs-MBP:task1 amitesh$ git graph
+*   8db8143 (HEAD -> master) 4th commit (3rd on master)-3Level,2Node
+|\  
+| * 2c4753e (testing) 2nd commit (1st on testing).
+* | 2c87f2d 3rd commit (2nd on master).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git checkout testing
+Switched to branch 'testing'
+Amiteshs-MBP:task1 amitesh$ ls
+README	TEST1
+Amiteshs-MBP:task1 amitesh$ vim README 
+Amiteshs-MBP:task1 amitesh$ git status
+On branch testing
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Amiteshs-MBP:task1 amitesh$ git add README 
+Amiteshs-MBP:task1 amitesh$ git commit -m "5th commit (2nd on testing)- 3Level,3Node"
+[testing 633c960] 5th commit (2nd on testing)- 3Level,3Node
+ 1 file changed, 1 insertion(+)
+Amiteshs-MBP:task1 amitesh$ git graph
+* 633c960 (HEAD -> testing) 5th commit (2nd on testing)- 3Level,3Node
+| *   8db8143 (master) 4th commit (3rd on master)-3Level,2Node
+| |\  
+| |/  
+|/|   
+* | 2c4753e 2nd commit (1st on testing).
+| * 2c87f2d 3rd commit (2nd on master).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git branch
+  master
+* testing
+Amiteshs-MBP:task1 amitesh$ git merge master -m "6th commit (3rd on testing)-4Level,2node"
+Merge made by the 'recursive' strategy.
+ TEST2 | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TEST2
+Amiteshs-MBP:task1 amitesh$ git graph
+*   3802c0a (HEAD -> testing) 6th commit (3rd on testing)-4Level,2node
+|\  
+| *   8db8143 (master) 4th commit (3rd on master)-3Level,2Node
+| |\  
+| * | 2c87f2d 3rd commit (2nd on master).
+* | | 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+|/|   
+* | 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git log
+commit 3802c0a09465648d5bc5aa2b0c27fbff57b25f95
+Merge: 633c960 8db8143
+Author: amiteshsah <aks629@nyu.edu>
+Date:   Wed Mar 22 03:35:54 2017 -0400
+
+    6th commit (3rd on testing)-4Level,2node
+
+commit 633c960ba2e8c388041ef0af60079f80a95369aa
+Author: amiteshsah <aks629@nyu.edu>
+Date:   Wed Mar 22 03:31:14 2017 -0400
+
+    5th commit (2nd on testing)- 3Level,3Node
+
+commit 8db8143e329e667ef19d366b734db49418e79c98
+Merge: 2c87f2d 2c4753e
+Author: amiteshsah <aks629@nyu.edu>
+Date:   Wed Mar 22 03:27:15 2017 -0400
+
+    4th commit (3rd on master)-3Level,2Node
+
+commit 2c87f2d384073aeb5b63b16055c3c7640e696223
+Author: amiteshsah <aks629@nyu.edu>
+Date:   Wed Mar 22 03:17:33 2017 -0400
+
+    3rd commit (2nd on master).
+
+commit 2c4753efb77bd6cc753be08cedd98fd9ae5826a9
+Author: amiteshsah <aks629@nyu.edu>
+Date:   Wed Mar 22 03:10:54 2017 -0400
+
+    2nd commit (1st on testing).
+
+commit 675da2942cac20e07861d8540aea265b22eb31a4
+Author: amiteshsah <aks629@nyu.edu>
+Date:   Wed Mar 22 02:34:30 2017 -0400
+
+    1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git branch
+  master
+* testing
+Amiteshs-MBP:task1 amitesh$ git checkout 2c87f2d384073aeb5b63b16055c3c7640e696223
+Note: checking out '2c87f2d384073aeb5b63b16055c3c7640e696223'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 2c87f2d... 3rd commit (2nd on master).
+Amiteshs-MBP:task1 amitesh$ git graph
+*   3802c0a (testing) 6th commit (3rd on testing)-4Level,2node
+|\  
+| *   8db8143 (master) 4th commit (3rd on master)-3Level,2Node
+| |\  
+| * | 2c87f2d (HEAD) 3rd commit (2nd on master).
+* | | 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+|/|   
+* | 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ ls
+README	TEST2
+Amiteshs-MBP:task1 amitesh$ vi TEST2 
+Amiteshs-MBP:task1 amitesh$ git commit -m "7th commit (4th on testing on checkout) - 3Level, 1Node"
+HEAD detached at 2c87f2d
+Changes not staged for commit:
+	modified:   TEST2
+
+no changes added to commit
+Amiteshs-MBP:task1 amitesh$ git status
+HEAD detached at 2c87f2d
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   TEST2
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Amiteshs-MBP:task1 amitesh$ git add TEST2 
+Amiteshs-MBP:task1 amitesh$ git commit -m "7th commit (4th on testing on checkout) - 3Level, 1Node"
+[detached HEAD d18cb82] 7th commit (4th on testing on checkout) - 3Level, 1Node
+ 1 file changed, 1 insertion(+)
+Amiteshs-MBP:task1 amitesh$ git graph
+*   3802c0a (testing) 6th commit (3rd on testing)-4Level,2node
+|\  
+| *   8db8143 (master) 4th commit (3rd on master)-3Level,2Node
+| |\  
+| * | 2c87f2d 3rd commit (2nd on master).
+* | | 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+|/|   
+* | 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git checkout testing
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  d18cb82 7th commit (4th on testing on checkout) - 3Level, 1Node
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> d18cb82
+
+Switched to branch 'testing'
+Amiteshs-MBP:task1 amitesh$  git branch newbranch  d18cb82
+Amiteshs-MBP:task1 amitesh$ git branch
+  master
+  newbranch
+* testing
+Amiteshs-MBP:task1 amitesh$ git graph
+* d18cb82 (newbranch) 7th commit (4th on testing on checkout) - 3Level, 1Node
+| *   3802c0a (HEAD -> testing) 6th commit (3rd on testing)-4Level,2node
+| |\  
+| | *   8db8143 (master) 4th commit (3rd on master)-3Level,2Node
+| | |\  
+| |/ /  
+|/| |   
+* | | 2c87f2d 3rd commit (2nd on master).
+| * | 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+| * 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git branch master
+fatal: A branch named 'master' already exists.
+Amiteshs-MBP:task1 amitesh$ git checkout master
+Switched to branch 'master'
+Amiteshs-MBP:task1 amitesh$ git graph
+* d18cb82 (newbranch) 7th commit (4th on testing on checkout) - 3Level, 1Node
+| *   3802c0a (testing) 6th commit (3rd on testing)-4Level,2node
+| |\  
+| | *   8db8143 (HEAD -> master) 4th commit (3rd on master)-3Level,2Node
+| | |\  
+| |/ /  
+|/| |   
+* | | 2c87f2d 3rd commit (2nd on master).
+| * | 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+| * 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git merge newbranch -m "8th commit (5th on testing)-4 Level, 1Node"
+Merge made by the 'recursive' strategy.
+ TEST2 | 1 +
+ 1 file changed, 1 insertion(+)
+Amiteshs-MBP:task1 amitesh$ git graph
+*   aee7085 (HEAD -> master) 8th commit (5th on testing)-4 Level, 1Node
+|\  
+| * d18cb82 (newbranch) 7th commit (4th on testing on checkout) - 3Level, 1Node
+| | *   3802c0a (testing) 6th commit (3rd on testing)-4Level,2node
+| | |\  
+| |_|/  
+|/| |   
+* | |   8db8143 4th commit (3rd on master)-3Level,2Node
+|\ \ \  
+| |/ /  
+|/| |   
+* | | 2c87f2d 3rd commit (2nd on master).
+| | * 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+| * 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git commit --amend -m "8th commit (5th on master) -4 Level, 1Node"
+[master 2e18601] 8th commit (5th on master) -4 Level, 1Node
+ Date: Wed Mar 22 04:27:31 2017 -0400
+Amiteshs-MBP:task1 amitesh$ git graph
+*   2e18601 (HEAD -> master) 8th commit (5th on master) -4 Level, 1Node
+|\  
+| * d18cb82 (newbranch) 7th commit (4th on testing on checkout) - 3Level, 1Node
+| | *   3802c0a (testing) 6th commit (3rd on testing)-4Level,2node
+| | |\  
+| |_|/  
+|/| |   
+* | |   8db8143 4th commit (3rd on master)-3Level,2Node
+|\ \ \  
+| |/ /  
+|/| |   
+* | | 2c87f2d 3rd commit (2nd on master).
+| | * 633c960 5th commit (2nd on testing)- 3Level,3Node
+| |/  
+| * 2c4753e 2nd commit (1st on testing).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ git branch
+* master
+  newbranch
+  testing
+Amiteshs-MBP:task1 amitesh$ git merge testing -m "9th commit (6th on master )- 5 Level, 1 Node"
+Merge made by the 'recursive' strategy.
+ README | 1 +
+ 1 file changed, 1 insertion(+)
+Amiteshs-MBP:task1 amitesh$ git graph
+*   f042d21 (HEAD -> master) 9th commit (6th on master )- 5 Level, 1 Node
+|\  
+| *   3802c0a (testing) 6th commit (3rd on testing)-4Level,2node
+| |\  
+| * | 633c960 5th commit (2nd on testing)- 3Level,3Node
+* | |   2e18601 8th commit (5th on master) -4 Level, 1Node
+|\ \ \  
+| |_|/  
+|/| |   
+| * | d18cb82 (newbranch) 7th commit (4th on testing on checkout) - 3Level, 1Node
+* | |   8db8143 4th commit (3rd on master)-3Level,2Node
+|\ \ \  
+| |/ /  
+|/| /   
+| |/    
+| * 2c4753e 2nd commit (1st on testing).
+* | 2c87f2d 3rd commit (2nd on master).
+|/  
+* 675da29 1st commit ( 1st on master ).
+Amiteshs-MBP:task1 amitesh$ echo "aks629">aks629.log
+Amiteshs-MBP:task1 amitesh$ git log --graph --oneline --branches >> aks629.log
+Amiteshs-MBP:task1 amitesh$ 
